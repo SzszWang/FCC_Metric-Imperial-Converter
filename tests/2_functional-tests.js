@@ -16,7 +16,7 @@ suite('Functional Tests', function() {
                 assert.equal(res.body.initUnit, 'L');
                 assert.approximately(res.body.returnNum, 2.64172, 0.00001);
                 assert.equal(res.body.returnUnit, 'gal');
-                assert.equal(res.body.string, '10 L converts to 2.64172 gal');
+                assert.equal(res.body.string, '10 liters converts to 2.64172 gallons');
                 
                 done();
             })
@@ -28,7 +28,7 @@ suite('Functional Tests', function() {
             .end(function(err, res) {
                 assert.equal(res.status, 200);
                 
-                assert.equal(res.body.error, 'invalid unit');
+                assert.equal(res.text, 'invalid unit');
 
                 done();
             })
@@ -40,7 +40,7 @@ suite('Functional Tests', function() {
             .end(function(err, res) {
                 assert.equal(res.status, 200);
                 
-                assert.equal(res.body.error, 'invalid number');
+                assert.equal(res.text, 'invalid number');
 
                 done();
             })
@@ -52,7 +52,7 @@ suite('Functional Tests', function() {
             .end(function(err, res) {
                 assert.equal(res.status, 200);
                 
-                assert.equal(res.body.error, 'invalid number and unit');
+                assert.equal(res.text, 'invalid number and unit');
 
                 done();
             })
@@ -68,7 +68,7 @@ suite('Functional Tests', function() {
                 assert.equal(res.body.initUnit, 'kg');
                 assert.approximately(res.body.returnNum, 2.20462, 0.00001);
                 assert.equal(res.body.returnUnit, 'lbs');
-                assert.equal(res.body.string, '1 kg converts to 2.20462 lbs');
+                assert.equal(res.body.string, '1 kilograms converts to 2.20462 pounds');
 
                 done();
             })

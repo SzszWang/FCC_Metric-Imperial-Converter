@@ -23,7 +23,7 @@ module.exports = function (app) {
     }
 
     if (error) {
-      return res.json({ error: error});
+      return res.send(error);
     } else {
       const returnUnit = convertHandler.getReturnUnit(initUnit);
       const returnNum = convertHandler.convert(initNum, initUnit);

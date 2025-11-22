@@ -99,14 +99,12 @@ function ConvertHandler() {
   this.getReturnUnit = function(initUnit) {
     let result;
     result = UNIT_MAP[initUnit]['returnUnit'];
-    console.log(result)
     return result;
   };
 
   this.spellOutUnit = function(unit) {
     let result;
     result = UNIT_MAP[unit]['full'];
-    console.log(result)
     return result;
   };
   
@@ -122,7 +120,9 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
-    result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
+    const initUnitFull = this.spellOutUnit(initUnit);
+    const returnUnitFull = this.spellOutUnit(returnUnit);
+    result = `${initNum} ${initUnitFull} converts to ${returnNum} ${returnUnitFull}`;
     return result;
   };
   
