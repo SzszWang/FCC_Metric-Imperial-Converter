@@ -13,11 +13,6 @@ const runner            = require('./test-runner');
 let app = express();
 
 app.use(cors({ origin: '*' }));
-//For FCC testing purposes
-fccTestingRoutes(app);
-
-//Routing for API 
-apiRoutes(app); 
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
@@ -33,10 +28,10 @@ app.route('/')
   });
 
 //For FCC testing purposes
-//fccTestingRoutes(app);
+fccTestingRoutes(app);
 
 //Routing for API 
-//apiRoutes(app);  
+apiRoutes(app);  
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {
